@@ -1,0 +1,159 @@
+/* 기본 리셋 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 다크/라이트 모드 토글 버튼 */
+#modeToggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* 테마 색상 변수 */
+body.light {
+    background: #f0f2f5;
+    color: #333;
+}
+
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+/* Hero 섹션 */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    max-height: 500px;
+    background-image: url("/static/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem auto;
+}
+
+    .hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+.hero-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+    .hero-form input {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        width: 240px;
+    }
+
+    .hero-form button {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        background: #4caf50;
+        color: #fff;
+        cursor: pointer;
+    }
+
+.hero .credit {
+    position: absolute;
+    bottom: 12px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: #fff;
+}
+
+/* Main Content Container */
+.app-container {
+    width: 90vw;
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+}
+
+/* 결과 카드 */
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-top: 1.5rem;
+}
+
+body.light {
+    --card-bg: #fff;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+body.dark {
+    --card-bg: #1e1e1e;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* 결과 리스트 */
+.result-list {
+    list-style: none;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 차트 */
+.chart img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* 반응형 */
+@media (max-width:480px) {
+    .hero {
+        height: 50vh;
+    }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+    .hero-form {
+        flex-direction: column;
+    }
+
+        .hero-form input {
+            width: 80%;
+        }
+}

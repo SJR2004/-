@@ -1,0 +1,10 @@
+flask
+pandas
+numpy
+matplotlib
+scikit-learn
+yfinance
+beautifulsoup4
+requests
+transformers
+torch
