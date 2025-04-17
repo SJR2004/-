@@ -22,11 +22,13 @@ jobs:
         run: flyctl auth login --access-token "$FLY_API_TOKEN"
 
       - name: 배포
--       run: flyctl deploy --config fly.toml -a stock-predict-model -y
-+       run: flyctl deploy \
-+         --config fly.toml \
-+         -a stock-predict-model \
-+         -y \
-+         --wait-timeout 10m      # 최대 10분까지 기다림
+        run: |
+          flyctl deploy \
+            --config fly.toml \
+            -a stock-predict-model \
+            -y \
+            --wait-timeout 10m \    # 최대 10분 대기
+            --region cdg            # 프랑크푸르트 리전 예시
+
 
 
