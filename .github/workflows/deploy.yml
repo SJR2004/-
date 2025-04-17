@@ -19,14 +19,14 @@ jobs:
           curl -L https://fly.io/install.sh | sh
           echo "$HOME/.fly/bin" >> $GITHUB_PATH
 
-      # 3) Fly.io 로그인 (새 CLI 방식)
+      # 3) Fly.io 로그인 (access-token 방식)
       - name: Fly.io 로그인
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         run: |
           flyctl auth login --access-token "$FLY_API_TOKEN"
 
-      # 4) 배포
+      # 4) 배포 (자동 승인 -y)
       - name: 배포
         run: flyctl deploy --config fly.toml -y
 
