@@ -3,6 +3,7 @@ name: 🚀 Fly.io 배포
 on:
   push:
     branches: [ main ]
+    workflow_dispatch:   # ← 이 줄을 추가하세요
 
 jobs:
   deploy:
